@@ -5,7 +5,7 @@ public class DuplicatePartNumberException extends RuntimeException {
     private final String message;
 
     public DuplicatePartNumberException(String message) {
-        this.message = message; // your custom message
+        this.message = message; 
     }
 
     @Override

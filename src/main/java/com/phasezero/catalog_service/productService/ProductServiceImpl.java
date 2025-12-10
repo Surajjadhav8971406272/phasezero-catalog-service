@@ -42,12 +42,8 @@ public class ProductServiceImpl implements ProductService {
 
    
         if (productRepository.existsByPartNumber(pn)) {
-            throw new DuplicatePartNumberException(
-                    "Product with partNumber already exists: " + pn
-            );
+            throw new DuplicatePartNumberException("Product with partNumber already exists: " + pn );
         }
-
-      
         if (product.getPrice() < 0 || product.getStock() < 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Price and stock cannot be negative");
         }
@@ -84,14 +80,10 @@ public class ProductServiceImpl implements ProductService {
         }
         return result;
     }
-
-
     @Override
     public List<Product> sortByPrice() {
         return productRepository.findAllByOrderByPriceAsc();
     }
-
-
     @Override
     public double getTotalInventoryValue() {
         return productRepository.findAll().stream()

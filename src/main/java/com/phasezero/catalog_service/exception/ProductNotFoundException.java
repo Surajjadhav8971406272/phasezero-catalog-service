@@ -5,7 +5,7 @@ public class ProductNotFoundException extends RuntimeException {
     private final String message;
 
     public ProductNotFoundException(String message) {
-        this.message = message; // store message yourself
+        this.message = message; 
     }
 
     @Override

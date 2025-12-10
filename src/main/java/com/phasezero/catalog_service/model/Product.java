@@ -12,7 +12,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;   // internal DB primary key (allowed + good practice)
+    private Long id;
 
     @NotBlank(message = "partNumber is required")
     @Column(unique = true, nullable = false)
