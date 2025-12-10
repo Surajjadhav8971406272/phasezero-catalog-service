@@ -2,11 +2,14 @@ package com.phasezero.catalog_service.model;
 
 import java.time.Instant;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 @Data
+@Entity
 public class Product {
 	
-	private String id;
+	@Id
 	private String partNumber;
 	private String partName;
 	private String catagory;
